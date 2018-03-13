@@ -3,7 +3,7 @@ require 'faraday'
 # @private
 module FaradayMiddleware
   # @private
-  class RaiseHttpException < Faraday::Middleware
+  class RaiseFlowAccountHttpException < Faraday::Middleware
     def call(env)
       @app.call(env).on_complete do |response|
         case response[:status].to_i

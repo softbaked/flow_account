@@ -20,7 +20,7 @@ module FlowAccount
           when 'json' then connection.use Faraday::Response::ParseJson
           end
         end
-        connection.use FaradayMiddleware::RaiseHttpException
+        connection.use FaradayMiddleware::RaiseFlowAccountHttpException
         connection.use FaradayMiddleware::LoudLogger if loud_logger
         connection.adapter(adapter)
       end
